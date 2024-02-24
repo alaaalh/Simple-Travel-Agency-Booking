@@ -20,11 +20,11 @@ const items = ref([
   },
   {
     label: t("language"),
-    icon: "pi pi-flag-us",
+    icon: "pi pi-globe",
     items: [
       {
         label: t("english"),
-        icon: "pi pi-flag-en",
+        icon: "pi pi-flag-gb",
         command: () => {
           setLocale("en");
         },
@@ -45,5 +45,6 @@ watch(locale, () => {
   items.value[1].items[1].label = t("arabic");
   items.value[0].label = t("home_title");
   items.value[1].label = t("language");
+  
 });
 </script>
