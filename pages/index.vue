@@ -1,2 +1,3 @@
 <template>
+    <RequestForm/>
 </template>

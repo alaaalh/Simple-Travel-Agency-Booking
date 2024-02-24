@@ -42,6 +42,9 @@ export default defineNuxtConfig({
 
   primevue: {
     cssLayerOrder: "reset,primevue",
+    options:{
+      ripple: true
+    }
   },
   css: [
     "primevue/resources/themes/aura-light-green/theme.css",
