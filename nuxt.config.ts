@@ -33,7 +33,7 @@ export default defineNuxtConfig({
       }
       
     ],
-    defaultLocal: "ar",
+    defaultLocale : "ar",
     i18n: {
       locales: ["ar", "en"],
       defaultLocale: "ar",
