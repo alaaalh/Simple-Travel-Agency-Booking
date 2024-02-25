@@ -8,5 +8,12 @@
   "ticketClass": "Ticket class",
   "tripType": "Trip type",
   "passengers": "Passengers",
-  "submit": "Submit"
+  "submit": "Submit",
+  "titleOne": "Card one",
+  "titleTwo": "Card two",
+  "titleThree": "Card three",
+  "subtitleOne": "first",
+  "subtitleTwo": "second",
+  "subtitleThree": "third",
+  "discription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!"
 }

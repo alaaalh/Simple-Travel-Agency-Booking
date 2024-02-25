@@ -1,27 +1,25 @@
 <template>
   <RequestForm />
-  <CardComponent :items="data"/>
+  <CardComponent :items="data" />
 </template>
 
 <script setup>
+const { t } = useI18n();
 const data = ref([
   {
-    title: "Card one",
-    subTitle: "first",
-    discription:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!",
+    title: t("titleOne"),
+    subTitle: t("subtitleOne"),
+    discription: t("discription"),
   },
   {
-    title: "Card two",
-    subTitle: "second",
-    discription:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!",
+    title: t("titleTwo"),
+    subTitle: t("subtitleTwo"),
+    discription: t("discription"),
   },
   {
-    title: "Card three",
-    subTitle: "third",
-    discription:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!",
+    title: t("titleThree"),
+    subTitle: t("subtitleThree"),
+    discription: t("discription"),
   },
 ]);
 </script>
