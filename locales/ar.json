@@ -1,6 +1,12 @@
 {
-    "home_title": "منزل",
-    "language": "اللغه",
-    "english": "الانجليزيه",
-    "arabic": "العربية"
+  "home_title": "منزل",
+  "language": "اللغه",
+  "english": "الانجليزيه",
+  "arabic": "العربية",
+  "from": "من",
+  "to": "إلى",
+  "ticketClass": "فئة التذاكر",
+  "tripType": "نوع الرحلة",
+  "passengers": "المسافرين",
+  "submit": "إرسال"
 }

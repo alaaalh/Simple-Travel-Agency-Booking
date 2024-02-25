@@ -1,6 +1,12 @@
 {
-    "home_title": "Home",
-    "language": "Language",
-    "english": "english",
-    "arabic": "arabic"
+  "home_title": "Home",
+  "language": "Language",
+  "english": "english",
+  "arabic": "arabic",
+  "from": "From",
+  "to": "To",
+  "ticketClass": "Ticket class",
+  "tripType": "Trip type",
+  "passengers": "Passengers",
+  "submit": "Submit"
 }

@@ -2,21 +2,21 @@
   <form class="container">
     <div class="form__field">
       <div>
-        <Calendar v-model="data.dateFrom" placeholder="from" />
-        <Calendar v-model="data.dateTo" placeholder="to" />
+        <Calendar v-model="data.dateFrom" :placeholder="$t('from')" />
+        <Calendar v-model="data.dateTo" :placeholder="$t('to')"  />
       </div>
 
       <div class="form__field-dropdown">
         <Dropdown
           v-model="data.ticketClass"
           :options="ticketClassOptions"
-          placeholder="Ticket class"
+          :placeholder="$t('ticketClass')"
         />
 
         <Dropdown
           v-model="data.typeType"
           :options="tripTypesOptions"
-          placeholder="Trip type"
+          :placeholder="$t('tripType')"
         />
       </div>
 
@@ -24,12 +24,12 @@
         <InputText
           type="number"
           v-model="passengers"
-          placeholder="Passengers"
+          :placeholder="$t('passengers')"
         />
       </div>
 
       <div class="submit-button">
-        <Button label="Submit"/>
+        <Button :label="$t('Submit')"/>
     </div>
     </div>
   </form>
