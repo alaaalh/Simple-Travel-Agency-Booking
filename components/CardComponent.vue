@@ -1,6 +1,6 @@
 <template>
   <div class="card-container">
-    <Card style="width: 25rem; overflow: hidden; margin-top: 20px" v-for="item in items">
+    <Card style="width: 20rem; overflow: hidden; margin-top: 20px" v-for="item in items">
       <template #header>
         <img
           alt="user header"
@@ -26,9 +26,9 @@
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 10px;
-  margin-top: 40px;
+  margin: 40px 10px;
 }
 
 @media (max-width: 768px) {

@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   title: "travel-agency-booking",
 
@@ -33,7 +32,7 @@ export default defineNuxtConfig({
       }
       
     ],
-    defaultLocale : "ar",
+    defaultLocale: "ar", 
     i18n: {
       locales: ["ar", "en"],
       defaultLocale: "ar",
@@ -42,7 +41,7 @@ export default defineNuxtConfig({
 
   primevue: {
     cssLayerOrder: "reset,primevue",
-    options:{
+    options: {
       ripple: true
     }
   },
