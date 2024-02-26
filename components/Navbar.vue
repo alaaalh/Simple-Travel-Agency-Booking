@@ -20,6 +20,10 @@ const items = ref([
     command: () => router.push(localPath("/")),
   },
   {
+    label: t("about"),
+    command: () => router.push(localPath("/about")),
+  },
+  {
     label: t("language"),
     icon: "pi pi-globe",
     items: [
@@ -42,10 +46,11 @@ const items = ref([
 ]);
 
 watch(locale, () => {
-  items.value[1].items[0].label = t("english");
-  items.value[1].items[1].label = t("arabic");
+  items.value[2].items[0].label = t("english");
+  items.value[2].items[1].label = t("arabic");
   items.value[0].label = t("home_title");
-  items.value[1].label = t("language");
+  items.value[1].label = t("about");
+  items.value[2].label = t("language");
   
 });
 </script>
