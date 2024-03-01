@@ -11,14 +11,14 @@
       <div class="form__field-dropdown">
         <Dropdown
           v-model="data.ticketClass"
-          :options="ticketClassOptions"
+          :options="ticketClassOptions.slice()"
           :placeholder="$t('ticketClass')"
           aria-label="{{ $t('ticketClass') }}"
         />
 
         <Dropdown
           v-model="data.tripType"
-          :options="tripTypesOptions"
+          :options="tripTypesOptions.slice()"
           :placeholder="$t('tripType')"
           aria-label="{{ $t('tripType') }}"
         />
@@ -27,9 +27,9 @@
       <div class="form__field-number">
         <InputText
           v-model="data.passengers"
+          type="number"
           :placeholder="$t('passengers')"
           aria-label="{{ $t('passengers') }}"
-          @input="data.passengers = parseInt(data.passengers)"
         />
       </div>
 
@@ -40,17 +40,25 @@
   </form>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 import z from 'zod';
 import { fromZodError } from 'zod-validation-error';
 
 
-const ticketClassOptions = ref(["Economy", "Business", "First"]);
-const tripTypesOptions = ref(["One-way", "Round-trip"]);
+const ticketClassOptions = ["Economy", "Business", "First"] as const;
+const tripTypesOptions = ["One-way", "Round-trip"] as const;
 
-const data = ref({
-  dateFrom: null,
+interface Data {
+  dateFrom: Date | string; 
+  dateTo: Date | null;
+  ticketClass: string | null;
+  tripType: string | null;
+  passengers: any ;
+}
+
+const data: Ref<Data> = ref({
+  dateFrom: '',
   dateTo: null,
   ticketClass: null,
   tripType: null,
@@ -62,15 +70,16 @@ const data = ref({
 const userSchema = z.object({
   dateFrom: z.date(),
   dateTo: z.date(),
-  ticketClass: z.enum(ticketClassOptions.value),
-  tripType: z.enum(tripTypesOptions.value),
+  ticketClass: z.enum(ticketClassOptions),
+  tripType: z.enum(tripTypesOptions),
   passengers: z.number()
 });
 
-const userMassage = ref('');
-const severity = ref('')
+const userMassage = ref<any>('');
+const severity = ref<string>('')
 
 const handleSubmit = () => {
+  data.value.passengers = parseInt(data.value.passengers)
   const result = userSchema.safeParse(data.value);
 
   if(!result.success){
