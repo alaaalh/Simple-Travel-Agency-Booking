@@ -3,9 +3,16 @@
   <CardComponent :items="data" />
 </template>
 
-<script setup>
+<script setup lang="ts">
 const { t } = useI18n();
-const data = ref([
+
+interface Card {
+  title: string;
+  subTitle: string;
+  discription: string;
+}
+
+const data: Card[] = [
   {
     title: t("titleOne"),
     subTitle: t("subtitleOne"),
@@ -21,5 +28,5 @@ const data = ref([
     subTitle: t("subtitleThree"),
     discription: t("discription"),
   },
-]);
+];
 </script>

@@ -1,6 +1,9 @@
 <template>
   <div class="card-container">
-    <Card style="width: 20rem; overflow: hidden; margin-top: 20px" v-for="item in items">
+    <Card
+      style="width: 20rem; overflow: hidden; margin-top: 20px"
+      v-for="item in items"
+    >
       <template #header>
         <img
           alt="user header"
@@ -19,7 +22,7 @@
 </template>
 
 <script setup>
-    const props = defineProps(['items'])
+defineProps(["items"]);
 </script>
 
 <style scoped>
