@@ -9,7 +9,7 @@ import { ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
 
 const { locale } = useI18n();
-const layoutDirection = ref(locale === 'en' ? 'ltr' : 'rtl');
+const layoutDirection = ref('rtl');
 
 watch(locale, (newLocale) => {
   layoutDirection.value = newLocale === 'en' ? 'ltr' : 'rtl';
