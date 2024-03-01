@@ -6,6 +6,7 @@
 <li>Zod: Implemented for creating validation schemas.</li>
 <li>i18n: Employed for localizing the application into multiple languages.</li>
 <li>PrimeVue: Integrated to import and utilize UI components.</li>
+<li>TypeScript:Utilized for making components strongly typed, providing enhanced type safety and code clarity.</li>
 </ul>
 
 <h2>Project Structure</h2>
@@ -27,9 +28,6 @@ The layouts directory houses default layout components that define the overall s
 The locales directory contains localization files for internationalization (i18n) purposes. Each locale file represents translations for specific languages, allowing the application to support multiple languages seamlessly.
 </p>
 
-
-<h3>TypeScript</h3>
-<p>Utilized for making components strongly typed, providing enhanced type safety and code clarity.</p>
 
 <h2>Usage</h2>
 <h4>-git clone 'https://github.com/alaaalh/Simple-Travel-Agency-Booking.git'</h4>
