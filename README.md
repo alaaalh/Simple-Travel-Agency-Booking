@@ -26,6 +26,10 @@ The layouts directory houses default layout components that define the overall s
 <p>
 The locales directory contains localization files for internationalization (i18n) purposes. Each locale file represents translations for specific languages, allowing the application to support multiple languages seamlessly.
 </p>
+
+
+<h3>TypeScript</h3>
+<p>Utilized for making components strongly typed, providing enhanced type safety and code clarity.</p>
 <h2>Usage</h2>
 <h4>-git clone 'https://github.com/alaaalh/Simple-Travel-Agency-Booking.git'</h4>
 <h4>-npm install</h4>
