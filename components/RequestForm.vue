@@ -14,70 +14,103 @@
   <Message :severity='severity' v-if="userMassage">{{ userMassage }}</Message>
   <form class="container mx-auto bg-white rounded-lg shadow-lg p-6">
     <div class="form__field">
+
       <div class="flex justify-center gap-4 mb-6">
         <label class="flex items-center">
           <input type="radio" name="tripType" value="one-way" v-model="data.tripType" class="mr-2" />
-          One Way
+          {{ $t('one_way') }}
         </label>
         <label class="flex items-center">
           <input type="radio" name="tripType" value="round" v-model="data.tripType" class="mr-2" />
-          Round Trip
+          {{ $t('round_trip') }}
         </label>
       </div>
 
       <hr />
-      <div>
-        <Calendar v-model="data.dateFrom" :placeholder="$t('from')" aria-label="{{ $t('from') }}"
-          :minDate="new Date()" />
 
-        <Calendar v-model="data.dateTo" :placeholder="$t('to')" aria-label="{{ $t('to') }}"
-          :minDate="new Date(data.dateFrom)" />
-      </div>
+      <div class="inputs-container">
+        <div>
+          <div>
+            <svg class="absolute left-3 top-3 h-5 w-5 text-yellow-400" style="color: rgb(234, 161, 33);" width="20px"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(234, 161, 33)" stroke="currentColor"
+              stroke-width="2">
+              <path d="M22 2 2 22M14.5 9.5 22 2M8.5 15.5 2 22M3 7l5 5M17 21l-5-5" />
+            </svg>
+            {{ $t('from') }}
+          </div>
+          <InputText v-model="data.from" placeholder="Flight from?" />
+        </div>
 
-      <div class="form__field-dropdown">
-        <Dropdown v-model="data.ticketClass" :options="ticketClassOptions.slice()" :placeholder="$t('ticketClass')"
-          aria-label="{{ $t('ticketClass') }}" />
+        <div>
+          <div>
+            <svg class="absolute left-3 top-3 h-5 w-5 text-yellow-400" style="color: rgb(234, 161, 33);" width="20px"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(234, 161, 33)" stroke="currentColor"
+              stroke-width="2">
+              <path d="M22 2 2 22M14.5 9.5 22 2M8.5 15.5 2 22M3 7l5 5M17 21l-5-5" />
+            </svg>
+            {{ $t('to') }}
+          </div>
+          <InputText v-model="data.to" placeholder="Flight to?" />
+        </div>
+        <div>
+          <div>
+            <svg class="absolute left-3 top-3 h-5 w-5 text-yellow-400" style="color: rgb(234, 161, 33);" width="20px"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(234, 161, 33)" stroke="currentColor"
+              stroke-width="2">
+              <path d="M22 2 2 22M14.5 9.5 22 2M8.5 15.5 2 22M3 7l5 5M17 21l-5-5" />
+            </svg>
+            {{ $t('depart') }}
+          </div>
+          <Calendar v-model="data.depart" :minDate="new Date()" placeholder="dd-MM-yyyy" />
+        </div>
+        <div>
+          <div>
+            <svg class="absolute left-3 top-3 h-5 w-5 text-yellow-400" style="color: rgb(234, 161, 33);" width="20px"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(234, 161, 33)" stroke="currentColor"
+              stroke-width="2">
+              <path d="M22 2 2 22M14.5 9.5 22 2M8.5 15.5 2 22M3 7l5 5M17 21l-5-5" />
+            </svg>
+            {{ $t('return') }}
+          </div>
+          <Calendar v-model="data.return" placeholder="dd-MM-yyyy" :minDate="new Date(data.dateFrom)" />
+        </div>
+        <div>
+          <div>
+            <svg class="absolute left-3 top-3 h-5 w-5 text-yellow-400" style="color: rgb(234, 161, 33);" width="20px"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(234, 161, 33)" stroke="currentColor"
+              stroke-width="2">
+              <path d="M22 2 2 22M14.5 9.5 22 2M8.5 15.5 2 22M3 7l5 5M17 21l-5-5" />
+            </svg>
+            {{ $t('cabin_class') }}
+          </div>
+          <Dropdown v-model="data.ticketClass" :options="ticketClassOptions.slice()" :placeholder="$t('ticketClass')"
+            aria-label="{{ $t('ticketClass') }}" />
+        </div>
 
-        <!-- <Dropdown v-model="data.tripType" :options="tripTypesOptions.slice()" :placeholder="$t('tripType')"
-          aria-label="{{ $t('tripType') }}" /> -->
-      </div>
+        <div class="search_container">
 
-      <div class="form__field-number">
-        <InputText v-model="data.passengers" type="number" :placeholder="$t('passengers')"
-          aria-label="{{ $t('passengers') }}" />
-      </div>
-
-      <div class="submit-button">
-        <Button :label="$t('submit')" aria-label="{{ $t('submit') }}" @click="handleSubmit" />
+          <svg width="20px" style="color: white;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+        </div>
       </div>
     </div>
   </form>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { ref } from "vue";
 import z from 'zod';
 import { fromZodError } from 'zod-validation-error';
 
 
-const ticketClassOptions = ["Economy", "Business", "First"] as const;
-const tripTypesOptions = ["One-way", "Round-trip"] as const;
+const ticketClassOptions = ["Economy", "Business", "First"];
+const tripTypesOptions = ["One-way", "Round-trip"];
 
-interface Data {
-  dateFrom: Date | string;
-  dateTo: Date | null;
-  ticketClass: string | null;
-  tripType: string | null;
-  passengers: any;
-}
 
-const data: Ref<Data> = ref({
-  dateFrom: '',
-  dateTo: null,
-  ticketClass: null,
-  tripType: null,
-  passengers: null,
-});
+const data = ref({});
 
 
 
@@ -89,8 +122,8 @@ const userSchema = z.object({
   passengers: z.number()
 });
 
-const userMassage = ref<any>('');
-const severity = ref<string>('')
+const userMassage = ref('');
+const severity = ref('')
 
 const handleSubmit = () => {
   data.value.passengers = parseInt(data.value.passengers)
@@ -112,10 +145,33 @@ const handleSubmit = () => {
 }
 
 .container {
-  /* display: flex; */
-  /* justify-content: center; */
   margin-top: 40px;
   text-align: center;
+}
+
+.container .p-inputtext {
+  border: none;
+  margin-top: 20px;
+  box-shadow: none;
+}
+
+.container .p-calendar,
+.container .p-inputwrapper {
+  border: none;
+  box-shadow: none;
+}
+
+.container .p-inputtext:enabled:focus
+.container .p-calendar:enabled:focus,
+.container .p-inputwrapper:enabled:focus,
+.container .p-inputtext:enabled:focus{
+  outline: none;
+  border-bottom: 2px solid orange;
+  border-radius: 0;
+}
+
+.container .p-icon {
+  margin-top: 25px;
 }
 
 .container hr {
@@ -124,9 +180,28 @@ const handleSubmit = () => {
 }
 
 .container>div {
-  border: 1px solid rgb(179, 209, 234);
+  border: 1px solid rgb(155, 166, 175);
   border-radius: 10px 0 10px 0;
-  padding: 20px;
+  padding: 40px 20px;
+}
+
+.inputs-container {
+  display: flex;
+}
+
+.inputs-container>div>div {
+  text-align: start;
+  margin-left: 15px;
+}
+
+.search_container {
+  margin: 10px 0 0 20px;
+  width: 60px;
+  height: 40px;
+  background: orange;
+  display: flex;
+  justify-content: center;
+  border-radius: 4px;
 }
 
 @media (max-width: 768px) {
@@ -136,23 +211,22 @@ const handleSubmit = () => {
 }
 
 .container .p-calendar {
-  width: 50%;
   padding: 0 5px;
 }
 
 .form__field-dropdown {
   padding: 20px 5px;
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
 }
 
-.container .p-dropdown {
+/* .container .p-dropdown {
   width: 49.5%;
-}
+} */
 
-.form__field .p-inputtext {
+/* .form__field .p-inputtext {
   width: 100%;
-}
+} */
 
 .form__field-number {
   padding: 5px;
@@ -167,6 +241,7 @@ const handleSubmit = () => {
 .header-container {
   text-align: center;
   margin-bottom: 3rem;
+  margin: 100px 0;
 }
 
 .main-title {
@@ -188,7 +263,7 @@ const handleSubmit = () => {
 
 .text-amber {
   color: #b45309;
-  background: -webkit-linear-gradient(left,#1e3a8a, #b45309);
+  background: -webkit-linear-gradient(left, #1e3a8a, #b45309);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

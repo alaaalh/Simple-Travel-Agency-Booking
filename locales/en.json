@@ -23,5 +23,8 @@
   "paradise_worlds": "Paradise Worlds,",
   "travel": "Trav",
   "one_way": "One Way",
-  "round_trip": "round_trip"
+  "round_trip": "Round Trip",
+  "depart": "Depart",
+  "return": "Return",
+  "cabin_class": "Cabin Class & Travelers"
 }
