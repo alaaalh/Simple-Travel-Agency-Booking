@@ -16,5 +16,12 @@
   "subtitleOne": "first",
   "subtitleTwo": "second",
   "subtitleThree": "third",
-  "discription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!"
+  "discription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!",
+  "travel_anywhere_now": "Travel Anywhere Now!",
+  "discover": "Discover ",
+  "our": "our ",
+  "paradise_worlds": "Paradise Worlds,",
+  "travel": "Trav",
+  "one_way": "One Way",
+  "round_trip": "round_trip"
 }

@@ -54,3 +54,10 @@ watch(locale, () => {
   
 });
 </script>
+
+<style>
+.card .p-menubar{
+  display: flex;
+  justify-content: center;
+}
+</style>
