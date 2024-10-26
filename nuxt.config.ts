@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   ],
 
   htmlAttrs: {
-    lang: "ar",
+    lang: "English",
   },
 
   devtools: { enabled: true },
@@ -17,26 +17,20 @@ export default defineNuxtConfig({
   i18n: {
     lazy: true,
     langDir: "locales",
-    strategy: "prefix_except_default",
+    // strategy: "prefix_except_default",
     locales: [
+      {
+        code: "en",
+        name: "English",
+        file: "en.json"
+      },
       {
         code: "ar",
         name: "Arabic",
         file: "ar.json",
       },
-      {
-        code: "en",
-        name: "English",
-        file: "en.json",
-        flag: '/flags/flag-en.png'
-      }
-      
     ],
     defaultLocale: "English", 
-    i18n: {
-      locales: ["ar", "en"],
-      defaultLocale: "ar",
-    },
   },
 
   primevue: {

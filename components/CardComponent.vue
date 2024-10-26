@@ -28,12 +28,10 @@ defineProps(["items"]);
 </script>
 
 <style scoped >
-/* card-container and Section Styles */
 .card-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-    
 }
 
 .section-title {
