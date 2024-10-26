@@ -187,11 +187,13 @@ const handleSubmit = () => {
 
 .inputs-container {
   display: flex;
+    flex-wrap: wrap;
 }
 
 .inputs-container>div>div {
   text-align: start;
-  margin-left: 15px;
+  margin: 10px 0 0 15px;
+  width: 230px;
 }
 
 .search_container {
@@ -214,19 +216,13 @@ const handleSubmit = () => {
   padding: 0 5px;
 }
 
-.form__field-dropdown {
-  padding: 20px 5px;
-  /* display: flex; */
-  justify-content: space-between;
+.container > div{
+  background-color: white;
 }
 
-/* .container .p-dropdown {
-  width: 49.5%;
-} */
-
-/* .form__field .p-inputtext {
-  width: 100%;
-} */
+.form__field-dropdown {
+  padding: 20px 5px;
+}
 
 .form__field-number {
   padding: 5px;

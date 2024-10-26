@@ -16,17 +16,22 @@ const data: Card[] = [
   {
     title: t("titleOne"),
     subTitle: t("subtitleOne"),
-    discription: t("discription"),
+    discription: '375$',
   },
   {
     title: t("titleTwo"),
     subTitle: t("subtitleTwo"),
-    discription: t("discription"),
+    discription: '375$',
   },
   {
     title: t("titleThree"),
     subTitle: t("subtitleThree"),
-    discription: t("discription"),
+    discription: '375$',
+  },
+  {
+    title: t("titleFour"),
+    subTitle: t("subtitleFour"),
+    discription: '375$',
   },
 ];
 </script>
